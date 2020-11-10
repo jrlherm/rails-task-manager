@@ -5,10 +5,5 @@
     </div>
   </div>
 
-  <%= simple_form_for(@task) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :details %>
-    <%= f.input :completed %>
-    <%= f.submit 'Save', class: 'btn btn-primary' %>
-  <% end %>
+  <%= render "form", task: @task %>
 </div>
