@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">
+        <%= @task.name %>
+      </h1>
+      <p class="lead">
+        <%= @task.details %>
+      </p>
+    </div>
+  </div>
+  <%= @task.completed ? 'Task completed' : 'Task not completed yet' %>
+  <div class="mt-5">
+    <%= link_to 'Back to tasks list', tasks_path %>
+    <%= link_to 'Update task', edit_path(@task) %>
+    <%= link_to 'Delete task',
+                task_path(@task),
+                method: :destroy,
+                data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+

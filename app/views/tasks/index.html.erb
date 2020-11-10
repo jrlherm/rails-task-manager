@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">My tasks</h1>
+      <p class="lead">A Rails project.</p>
+    </div>
+  </div>
+
+  <ul class="list-unstyled">
+    <% @tasks.each do |task| %>
+      <li>
+        <%= task.completed ? icon('fas', 'check') : icon('fas', 'times') %>
+        <%= link_to task.name, task_path(task) %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="new">
+    <%= link_to 'Add a new task', new_path %>
+  </div>
+</div>
